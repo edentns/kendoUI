@@ -1,0 +1,38 @@
+<div class="modal-header">
+	<h3 class="modal-title">거래처 등록</h3>
+</div>
+<div class="modal-body">
+	<div style="margin-top: 5px;">
+		<div class="form-type1">
+			<table sumary="">
+				<colgroup>
+					<col style="width: 25%" />
+					<col style="width: 75%" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><span class="form-required">* </span>고객사명</th>
+						<td>
+							<input type="text" eden-type="kor" class="form-control wid-x6" id="insertCompanyInfoName" placeholder="" title="고객사명 입력"
+										 data-ng-model="insertVO.param.c_NAME" autofocus data-eden-type="kor">
+						</td>
+					</tr>
+					<tr>
+						<th>담당부서</th>
+						<td>
+              <select class="form-control wid-x6" title="담당부서 선택" data-ng-model="insertVO.param.c_SALES_DEPT_CD">
+                <option value="">전체</option>
+                <option data-ng-repeat="DC in codeVO.departCodeList"
+                  value="{{DC.CD}}">{{DC.NAME}}</option>
+              </select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="submit" class="btn btn-primary" title="거래처 등록" data-ng-click="insertVO.doInsert()">확인</button>
+		<button type="button" class="btn btn-warning" title="취소" data-ng-click="insertVO.doCancle()">취소</button>
+	</div>
+</div>

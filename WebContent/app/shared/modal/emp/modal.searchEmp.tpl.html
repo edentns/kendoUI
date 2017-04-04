@@ -1,0 +1,33 @@
+<div class="modal-header">
+	<h3 class="modal-title">유저 검색</h3>
+</div>
+<div class="modal-body">
+	<form class="simple-search">
+		<select class="form-control" title="검색기준 선택" data-ng-options="dept.CD as dept.NAME for dept in vm.code.deptList" data-ng-model="vm.search.dept"></select>
+		<input type="search" eden-type="kor" class="form-control" title="검색어 입력" data-ng-model="vm.search.keyword" autofocus>
+		<button type="submit" class="btn btn-primary" data-ng-click="vm.search.inquiry()" title="장비 검색">검색</button>
+	</form>
+
+	<div class="row">
+		<div class="col-xs-4 pr-0">
+			<div ag-grid="vm.emp.grid" class="ag-fresh" style="height:450px;"></div>
+		</div>
+		<div class="col-xs-1">
+			<div class="hbox va-m ta-c">
+				<div class="hbox-col">
+					<button type="button" class="btn btn-default wid-12" title="" data-ng-click="vm.emp.putCart()" style="height: 450px;">
+						<span class="font-w700 font-lg"><i class="fa fa-shopping-cart fa-2x orange"></i><br/>장<br/>바<br/>구<br/>니<br/>로<br/>이<br/>동</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-7 pl-0">
+			<div ag-grid="vm.selectedEmp.grid" class="ag-fresh" style="height:450px;"></div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-primary" title="사원 확인" data-ng-click="vm.confirm()">확인</button>
+		<button type="button" class="btn btn-warning" title="취소" data-ng-click="vm.cancel()">취소</button>
+	</div>
+</div>

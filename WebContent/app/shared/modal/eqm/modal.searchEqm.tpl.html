@@ -1,0 +1,21 @@
+<div class="modal-header">
+	<h3 class="modal-title">장비 검색</h3>
+</div>
+<div class="modal-body">
+	<form class="simple-search">
+		<select class="form-control" title="검색기준 선택" ng-options="tp.value as tp.name for tp in vm.code.tpList" data-ng-model="vm.search.tp"></select>
+		<input type="search" eden-type="kor" class="form-control" title="검색어 입력" data-ng-model="vm.search.keyword" autofocus>
+		<button type="submit" class="btn btn-primary" data-ng-click="vm.search.inquiry()" title="장비 검색">검색</button>
+	</form>
+	<div>
+		<div ag-grid="vm.eqm.grid" class="ag-fresh" style="height:250px;"></div>
+		<div class="ta-c mt-5">
+			<button type="button" class="form-control" title="" data-ng-click="vm.eqm.putCart()"><i class="fa fa-shopping-cart fa-2x orange"></i><span class="font-w700 pl-10 font-lg">장바구니로 이동</span></button>
+		</div>
+		<div ag-grid="vm.selectedEqm.grid" class="ag-fresh mt-5" style="height:250px;"></div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-primary" title="장비 확인" data-ng-click="vm.confirm()">확인</button>
+		<button type="button" class="btn btn-warning" title="취소" data-ng-click="vm.cancel()">취소</button>
+	</div>
+</div>

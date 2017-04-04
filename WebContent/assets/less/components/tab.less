@@ -1,0 +1,29 @@
+.nav-tabs {
+	border-bottom: 1px solid #C3C3C3;
+
+	> li > a {
+		padding: 10px 25px; border: 1px solid #C3C3C3; color: #6836c4; border-bottom-width: 0;
+
+		&:hover { border: 1px solid #C3C3C3; background-color: transparent; }
+	}
+
+	> li.active {
+		> a {
+			border: 1px solid #C3C3C3; background-color: rgb(121, 119, 194); border-bottom-color:  rgb(121, 119, 194); color:#fff;
+			&:focus, &:active, &:hover { border: 1px solid #C3C3C3; background-color: rgb(121, 119, 194); border-bottom-color:  rgb(121, 119, 194); color:#fff; }
+		}
+	}
+}
+.nav-tabs.page-tabs {
+	> li > a { color: #6836c4; }
+	> li.active {
+		> a {
+			border: 1px solid #C3C3C3; background-color: rgba(67,117,219, .8); border-bottom-color:  rgba(67,117,219, .8); font-weight: bold; color:#fff;
+			&:focus, &:active, &:hover { border: 1px solid #C3C3C3; background-color: rgba(67,117,219, .8); border-bottom-color:  rgba(67,117,219, .8); color:#fff; }
+		}
+	}
+}
+
+/*.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {background-color: #FCFCFC;}*/

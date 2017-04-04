@@ -1,0 +1,28 @@
+<div class="modal-header">
+	<h3 class="modal-title">장비 검색</h3>
+</div>
+<div class="modal-body">
+	<form class="simple-search">
+		<select class="form-control" title="검색기준 선택" ng-options="tp.value as tp.name for tp in vm.code.tpList" data-ng-model="vm.search.tp"></select>
+		<input type="text" eden-type="kor" class="form-control" title="검색어 입력" data-ng-model="vm.search.keyword" autofocus>
+		<button type="submit" class="btn btn-primary" data-ng-click="vm.inquiry()" title="장비 검색">검색</button>
+	</form>
+	<div>
+		<table ng-table="vm.table.tableParams" class="table table-bordered no-footer hover-cursor">
+			<tr ng-repeat="eqm in $data" ng-click="vm.table.changeSelected(eqm)" ng-dblclick="vm.table.quickConfirm(eqm)" ng-class="{'selected': eqm.selected}">
+				<td data-title="'장비번호'" header-class="ta-c" sortable="'NO_EQM'">{{eqm.NO_EQM}}</td>
+				<td data-title="'장비명'" header-class="ta-c" sortable="'NM_EQM'">{{eqm.NM_EQM}}</td>
+				<td data-title="'장비유형'" header-class="ta-c" sortable="'NM_EQM_TP'">{{eqm.NM_EQM_TP}}</td>
+				<td data-title="'관리고객사'" header-class="ta-c" sortable="'NM_MNG_CUST'">{{eqm.NM_MNG_CUST}}</td>
+				<td data-title="'서비스고객사'" header-class="ta-c" sortable="'NM_SERV_CUST'">{{eqm.NM_SERV_CUST}}</td>
+			</tr>
+			<tr data-ng-if="vm.data.length==0">
+				<td colspan="5"><span>검색된 거래처가 없습니다.</span></td>
+			</tr>
+		</table>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-primary" title="장비 확인" data-ng-click="vm.confirm()">확인</button>
+		<button type="button" class="btn btn-warning" title="취소" data-ng-click="vm.cancel()">취소</button>
+	</div>
+</div>

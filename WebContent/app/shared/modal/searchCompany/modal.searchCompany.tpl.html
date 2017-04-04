@@ -1,0 +1,34 @@
+<div class="modal-header">
+	<h3 class="modal-title">거래처 검색</h3>
+</div>
+<div class="modal-body">
+	<div class="simple-search">
+		<form class="col-xs-12 left-group">
+			<input type="text" eden-type="kor" class="form-control" title="검색어 입력" data-ng-model="searchCompanyVO.searchWord" autofocus>
+			<button type="submit" class="btn btn-primary" data-ng-click="searchCompanyVO.doInquiry()" title="">검색</button>
+		</form>
+	</div>
+	<div>
+		<table ng-table="searchCompanyVO.tbl.tableParams" class="table table-bordered no-footer">
+			<tr data-ng-if="searchCompanyVO.isSearchStatus && searchCompanyVO.data.length>0"
+				ng-repeat="companyInfo in $data"
+				ng-click="searchCompanyVO.changeSelected(companyInfo)"
+				ng-dblclick="searchCompanyVO.doDblConfirm(companyInfo)"
+				ng-class="{'success': companyInfo.selected}">
+				<td data-title="'거래처명'" header-class="ta-c" sortable="'c_NAME'">
+					{{companyInfo.c_NAME}}
+				</td>
+			</tr>
+			<tr data-ng-if="searchCompanyVO.isSearchStatus && searchCompanyVO.data.length==0">
+				<td><span>검색된 거래처가 없습니다.</span></td>
+			</tr>
+			<tr data-ng-if="!searchCompanyVO.isSearchStatus">
+				<td><span>거래처를 검색해주세요.</span></td>
+			</tr>
+		</table>
+	</div>
+	<div class="modal-footer">
+		<button type="submit" class="btn btn-primary" title="거래처 확인" data-ng-click="searchCompanyVO.doConfirm()">확인</button>
+		<button type="button" class="btn btn-warning" title="취소" data-ng-click="searchCompanyVO.doCancle()">취소</button>
+	</div>
+</div>

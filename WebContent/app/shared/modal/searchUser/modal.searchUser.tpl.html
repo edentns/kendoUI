@@ -1,0 +1,40 @@
+<div class="modal-header">
+	<h3 class="modal-title">유저 검색</h3>
+</div>
+<div class="modal-body">
+	<form>
+		<div class="frm-input-group">
+			<span class="frm-input-group-value frm-auto">
+				<select id="ingState" class="form-control" title="부서선택" data-ng-options="code.CD as code.NAME for code in View.departCodeList" data-ng-model="View.search.dept" autofocus>
+					<option value="">전체</option>
+				</select>
+			</span>
+			<span class="frm-input-group-value frm-auto">
+				<input type="text" eden-type="kor" class="form-control" title="검색어 입력" data-ng-model="View.search.name"/>
+			</span>
+			<span class="frm-input-group-btn">
+				<button type="submit" class="btn btn-primary" title="유저검색" data-ng-click="View.inquiry()">검색</button>
+			</span>
+		</div>
+	</form>
+
+	<div class="tbl-type1 mt-10">
+		<table ng-table="View.table.tableParams" class="table table-bordered no-footer">
+			<tr data-ng-if="!View.bPristine && View.data.length>0" data-ng-repeat="user in $data" data-ng-click="View.clickSelectUser(user)"
+					data-ng-dblclick="View.dblClickSelectUser(user)" data-ng-class="{'success': user.selected}">
+				<td data-title="'부서'" header-class="ta-c" sortable="'DEPT_NAME'">{{user.DEPT_NAME}}</td>
+				<td data-title="'이름'" header-class="ta-c" sortable="'NAME'">{{user.NAME}}</td>
+			</tr>
+			<tr data-ng-if="!View.bPristine && View.data.length==0">
+				<td colspan="2"><span>검색된 정보가가 없습니다.</span></td>
+			</tr>
+			<tr data-ng-if="View.bPristine">
+				<td colspan="2"><span>검색해주세요.</span></td>
+			</tr>
+		</table>
+	</div>
+	<div class="modal-footer">
+		<button type="submit" class="btn btn-primary" title="거래처 확인" data-ng-click="View.confirm()">확인</button>
+		<button type="button" class="btn btn-danger" title="취소" data-ng-click="View.cancel()">취소</button>
+	</div>
+</div>

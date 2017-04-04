@@ -1,0 +1,56 @@
+<div class="modal-header">
+	<h3 class="modal-title">고객사 담당자 등록</h3>
+</div>
+<div class="modal-body">
+	<div style="margin-top: 5px;">
+		<div class="form-type1">
+			<table sumary="">
+				<colgroup>
+					<col style="width: 25%" />
+					<col style="width: 75%" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><span class="form-required">* </span>고객사명</th>
+						<td>
+							<input type="text" class="form-control wid-x6" name="companyName" placeholder="고객사명을 검색해주세요." title="고객사 입력" disabled="disabled"
+	                               data-ng-model="insertVO.NO_CUST.NAME">
+	                        <button type="button" class="btn btn-default btn-label-left" id="companyNameBtn" title="고객사 레이어팝업 열림" data-ng-disabled="insertVO.disabled" 
+	                                data-ng-click="insertVO.modalSearchCustomerCompany()">
+	                            <span><i class="fa fa-search"></i></span>검색
+	                        </button>
+                        </td>
+					</tr>
+					<tr>
+						<th><span class="form-required">* </span>이름</th>
+						<td>
+							<input type="text" eden-type="kor" class="form-control wid-x6" id="chargeName" name="chargeName" title="이름 입력"
+                                                maxlength="20"
+                                                data-ng-model="insertVO.NM_IN_CHARGE.VALUE">
+						</td>
+					</tr>
+					<tr>
+						<th><span class="form-required">* </span>연락처</th>
+						<td>
+							<input type="text" class="form-control wid-x6" id="chargePhone" name="chargePhone" placeholder="'000-0000-0000'형식으로 입력해주세요." title="연락처 입력"
+                                               maxlength="13"
+                                               data-ng-model="insertVO.NO_MOBILE.VALUE">
+						</td>
+					</tr>
+					<tr>
+						<th>이메일</th>
+						<td>
+							<input type="text" class="form-control wid-x6" id="chargeEmail" name="chargeEmail" title="이메일 입력"
+                                               maxlength="40"
+                                               data-ng-model="insertVO.NO_EMAIL.VALUE">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="submit" class="btn btn-primary" title="담당자 등록" data-ng-click="insertVO.doInsert()">확인</button>
+		<button type="button" class="btn btn-warning" title="취소" data-ng-click="insertVO.doCancle()">취소</button>
+	</div>
+</div>

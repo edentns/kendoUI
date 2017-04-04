@@ -1,0 +1,108 @@
+.edt-tree {
+	position : relative;
+	border   : 1px solid #dee5e7;
+	box-sizing : content-box;
+}
+
+.edt-tree-container {
+	float : left;
+}
+
+.edt-tree-header,
+.edt-tree-view {
+	overflow : hidden;
+}
+.edt-tree-header {
+	background-color : #f6f8f8;
+	border-bottom    : 1px solid #d4d4d4;
+}
+.edt-tree-header-row {
+
+}
+.edt-tree-header-col {
+	font-weight : bold;
+	text-align  : center;
+}
+
+.edt-tree-header-col,
+.edt-tree-view-col {
+	float    : left;
+	overflow : hidden;
+	height   : 100%;
+	border-right : 1px solid #d4d4d4;
+}
+.edt-tree-view-col input[type="checkbox"],
+.edt-tree-view-col input[type="radio"] {
+	margin  : 0;
+	padding : 0;
+}
+
+.edt-tree-header-row .edt-tree-header-col:last-child,
+.edt-tree-view-row .edt-tree-view-col:last-child {
+	border-right-width : 0;
+}
+.edt-tree-view-row:nth-child(even) .edt-tree-view-col{
+	background-color : #f3f3f3;
+}
+.edt-tree-view-row:nth-child(odd) .edt-tree-view-col{
+	background-color : #fdfdfd;
+}
+
+.edt-tree-header-col-content,
+.edt-tree-view-col-content {
+	padding  : 5px;
+	overflow : hidden;
+	height   : 100%;
+	white-space   : nowrap;
+	text-overflow : ellipsis;
+}
+.edt-tree-view-col-content span,
+.edt-tree-view-col-content input[type="text"],
+.edt-tree-view-col-content input[type="checkbox"],
+.edt-tree-view-col-content input[type="radio"] {
+	vertical-align : middle;
+}
+.edt-tree-view-col-content select {
+	width: 100%;
+}
+
+.edt-tree-view-col-tree-content {
+
+}
+
+.edt-tree-hierarchy-icon {
+	color : #525252;
+}
+.edt-tree-hierarchy-icon:focus,
+.edt-tree-hierarchy-icon:active,
+.edt-tree-hierarchy-icon:link {
+	color : #525252;
+	text-decoration: none;
+}
+
+.edt-tree-view-col-tree-content i {
+	display : inline-block;
+	width   : 12px;
+	height  : 12px;
+	margin-right : 3px;
+}
+.edt-tree-view-col-tree-content i+i {
+	vertical-align: bottom;
+}
+
+.edt-tree:after,
+.edt-tree-header-row:after,
+.edt-tree-view-row:after {
+	display : table;
+	content : " ";
+	clear   : both;
+}
+
+
+
+/* button */
+button[disabled],
+html input[disabled] {
+	cursor : not-allowed;
+	opacity: .65;
+}

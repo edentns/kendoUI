@@ -1,0 +1,291 @@
+@import "./variables.less";
+
+@font-face {
+	font-family: 'ui-grid';
+	src: url('../fonts/ui-grid.eot');
+	src: url('../fonts/ui-grid.eot#iefix') format('embedded-opentype'), url('../fonts/ui-grid.woff') format('woff'), url('../fonts/ui-grid.ttf?') format('truetype'), url('../fonts/ui-grid.svg?#ui-grid') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin:0;
+}
+
+ul {
+	padding:0;
+	margin: 0;
+	list-style-type: none;
+	li {
+	}
+}
+
+table {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	word-break: break-all;
+
+	thead {
+		tr {
+			th, td {
+				text-align: center;
+				padding: 6px 7px;
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			th, td {
+				text-align: center;
+				vertical-align: middle;
+				padding: 6px 7px;
+			}
+
+			td {
+				input[type="text"],
+				input[type="number"],
+				input[type="password"],
+				input[type="email"] {
+					width: 100%;
+					padding-left: 12px;
+					padding-right: 12px;
+				}
+
+				button {
+					margin: 0 !important;
+					vertical-align: middle;
+				}
+
+				.tbl-message {
+					color: @color-light;
+					font-weight: bold;
+				}
+
+				table {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	tfoot {
+		tr {
+			td {
+				text-align: center;
+			}
+		}
+	}
+
+}
+
+textarea {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+	resize: none;
+}
+
+
+/*
+ * init bootstrap css
+ */
+.container,
+.container-fluid {
+	min-width: 1336px !important;
+}
+
+input[type=checkbox], input[type=radio] { margin: 2px 0 0; }
+
+/*
+ * init data-range-picker
+ */
+.date-picker-wrapper {
+	z-index: 99;
+}
+
+/*
+ * hide before process angular
+ */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+
+/* jquery-ui 경로 수정 */
+.ui-icon,
+.ui-widget-content .ui-icon {
+	background-image: url("../img/jquery-ui/ui-icons_bbbbbb_256x240.png");
+}
+.ui-widget-header .ui-icon {
+	background-image: url("../img/jquery-ui/ui-icons_cccccc_256x240.png");
+}
+.ui-state-default .ui-icon {
+	background-image: url("../img/jquery-ui/ui-icons_666666_256x240.png");
+}
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon {
+	background-image: url("../img/jquery-ui/ui-icons_c98000_256x240.png");
+}
+.ui-state-active .ui-icon {
+	background-image: url("../img/jquery-ui/ui-icons_f29a00_256x240.png");
+}
+.ui-state-highlight .ui-icon {
+	background-image: url("../img/jquery-ui/ui-icons_aaaaaa_256x240.png");
+}
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+	background-image: url("../img/jquery-ui/ui-icons_cd0a0a_256x240.png");
+}
+.ui-widget-overlay {
+	background: #aaaaaa url("../img/jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
+	opacity: .3;
+	filter: Alpha(Opacity=30); /* support: IE8 */
+}
+.ui-widget-shadow {
+	margin: -8px 0 0 -8px;
+	padding: 8px;
+	background: #aaaaaa url("../img/jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
+	opacity: .3;
+	filter: Alpha(Opacity=30); /* support: IE8 */
+	border-radius: 8px;
+}
+.ui-widget-content {
+	border: 1px solid #404040;
+	background: #121212 url("../img/jquery-ui/ui-bg_gloss-wave_16_121212_500x100.png") 50% top repeat-x;
+	color: #eeeeee;
+}
+.ui-widget-header {
+	border: 1px solid #404040;
+	background: #888888 url("../img/jquery-ui/ui-bg_highlight-hard_15_888888_1x100.png") 50% 50% repeat-x;
+	color: #ffffff;
+	font-weight: bold;
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	border: 1px solid #cccccc;
+	background: #adadad url("../img/jquery-ui/ui-bg_highlight-soft_35_adadad_1x100.png") 50% 50% repeat-x;
+	font-weight: normal;
+	color: #333333;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	border: 1px solid #dddddd;
+	background: #dddddd url("../img/jquery-ui/ui-bg_highlight-soft_60_dddddd_1x100.png") 50% 50% repeat-x;
+	font-weight: normal;
+	color: #000000;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+	border: 1px solid #000000;
+	background: #121212 url("../img/jquery-ui/ui-bg_inset-soft_15_121212_1x100.png") 50% 50% repeat-x;
+	font-weight: normal;
+	color: #ffffff;
+}
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+	border: 1px solid #404040;
+	background: #555555 url("../img/jquery-ui/ui-bg_highlight-hard_55_555555_1x100.png") 50% top repeat-x;
+	color: #cccccc;
+}
+.ui-state-error,
+.ui-widget-content .ui-state-error,
+.ui-widget-header .ui-state-error {
+	border: 1px solid #cd0a0a;
+	background: #fef1ec url("../img/jquery-ui/ui-bg_glass_95_fef1ec_1x400.png") 50% 50% repeat-x;
+	color: #cd0a0a;
+}
+
+/* select2 */
+.select2-container--default .select2-selection--single { border-radius: 1px; }
+
+/* modal */
+.modal-footer {
+	margin-top: 20px;
+
+	.btn {
+		height: 28px;
+	}
+}
+
+/* angular-grid */
+.ui-grid {
+	.btn { margin-bottom: 0; height: 14px; line-height: 14px; }
+}
+
+/* ag-grid */
+.ag-fresh {
+	border-top: 1px solid #d4d4d4;
+	.ag-root {
+		border: 1px solid #d4d4d4;
+	}
+	.ag-header-container {
+		background: #f6f8f8;
+		border-bottom: 2px solid #d4d4d4;
+	}
+	.ag-header-cell {
+		border-right: 1px solid #d4d4d4;
+	}
+	.ag-header-group-cell {
+		border-right: 1px solid #d4d4d4;
+	}
+	.ag-header-group-cell-with-group {
+		border-bottom: 1px solid #d4d4d4;
+	}
+	.ag-selection-checkbox {
+		vertical-align: top;
+	}
+	.ag-cell {
+		.ag-small {
+			font-size: smaller;
+			padding-left: 3px;
+			padding-right: 5px;
+		}
+	}
+}
+
+.ag-cell i { padding-left: 5px; }
+
+/* bootstrap */
+.nav {
+	li > a {
+		&:hover { cursor: pointer; }
+	}
+}
+
+.btn { height: 28px; }
+
+.form-group {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.form-inline {
+	.form-group {
+		margin-top: 0;
+		margin-bottom: 0;
+
+		&+.form-group {
+			margin-left: 10px;
+		}
+
+		label+.form-control { margin-left: 3px; }
+	}
+}
+.form-control:hover {
+	box-shadow: none;
+}
+
+.table > tbody > tr > td { vertical-align: middle; }
+
+/* textAngular */
+.ta-root.focussed > .ta-scroll-window.form-control {
+	box-shadow: none;
+}

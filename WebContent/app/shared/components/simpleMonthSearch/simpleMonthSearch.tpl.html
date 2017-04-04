@@ -1,0 +1,31 @@
+<div class="simple-inquiry-wrap">
+  <div class="select-btn-group-wrap">
+    <ul class="select-btn-group">
+      <li	data-ng-class="{active: dateInfo.active}" data-ng-repeat="dateInfo in searchVO.dateKindList">
+				<button type="button" title="{{dateInfo.title}} 선택" data-ng-click="searchVO.doInquiry(dateInfo.name)">{{dateInfo.title}}</button>
+			</li>
+    </ul>
+  </div>
+	<div class="select-period">
+    <div class="standardDate">&nbsp;&nbsp;<b>일자</b> &nbsp;</div>
+		<div>
+			<select class="form-control" title="시작년 선택" data-ng-disabled="!searchVO.free" data-ng-model="searchVO.year" data-ng-change="searchVO.doInquiry()">
+				<option data-ng-repeat="yearNum in searchVO.yearList" data-ng-selected="yearNum == searchVO.year" value="{{yearNum}}" >{{yearNum}}년</option>
+			</select>
+			<select class="form-control" title="시작월 선택" data-ng-disabled="!searchVO.free" data-ng-model="searchVO.month" data-ng-change="searchVO.doInquiry()">
+				<option value="01">01월</option>
+				<option value="02">02월</option>
+				<option value="03">03월</option>
+				<option value="04">04월</option>
+				<option value="05">05월</option>
+				<option value="06">06월</option>
+				<option value="07">07월</option>
+				<option value="08">08월</option>
+				<option value="09">09월</option>
+				<option value="10">10월</option>
+				<option value="11">11월</option>
+				<option value="12">12월</option>
+			</select>
+    </div>
+	</div>
+</div>

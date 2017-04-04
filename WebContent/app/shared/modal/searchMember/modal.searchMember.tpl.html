@@ -1,0 +1,42 @@
+<div class="modal-header">
+	<h3 class="modal-title">유저 검색</h3>
+</div>
+<div class="modal-body">
+	<div class="simple-search">
+		<form class="col-xs-8 left-group">
+			<select class="form-control" title="부서선택"
+				data-ng-model="employeeVO.search.depart"
+				data-ng-options="codeInfo.NAME for codeInfo in employeeVO.departCodeList track by codeInfo.CD" data-modal-foucs>
+				<option value="">전체</option>
+			</select>
+			<input type="text" eden-type="kor" class="form-control" title="검색어 입력" data-ng-model="employeeVO.search.name">
+			<button type="sumbit" class="btn btn-primary" title="유저 검색" data-ng-click="employeeVO.doInquiry()" title="">검색</button>
+		</form>
+	</div>
+	<div class="tbl-type1">
+		<table ng-table="employeeVO.tbl.tableParams" class="table table-bordered no-footer">
+			<tr data-ng-if="employeeVO.isSearchStatus && employeeVO.data.length>0"
+				ng-repeat="employeeInfo in $data"
+				ng-click="employeeVO.changeSelected(employeeInfo)"
+				ng-dblclick="employeeVO.doDblConfirm(employeeInfo)"
+				ng-class="{'success': employeeInfo.selected}">
+				<td data-title="'부서'" header-class="ta-c" sortable="'DEPT_NAME'">
+					{{employeeInfo.DEPT_NAME}}
+				</td>
+				<td data-title="'이름'" header-class="ta-c" sortable="'NAME'">
+					{{employeeInfo.NAME}}
+				</td>
+			</tr>
+			<tr data-ng-if="employeeVO.isSearchStatus && employeeVO.data.length==0">
+				<td colspan="2"><span>검색된 정보가가 없습니다.</span></td>
+			</tr>
+			<tr data-ng-if="!employeeVO.isSearchStatus">
+				<td colspan="2"><span>검색해주세요.</span></td>
+			</tr>
+		</table>
+	</div>
+	<div class="modal-footer">
+		<button type="submit" class="btn btn-primary" title="거래처 확인" data-ng-click="employeeVO.doConfirm()">확인</button>
+		<button type="button" class="btn btn-danger" title="취소" data-ng-click="employeeVO.doCancle()">취소</button>
+	</div>
+</div>

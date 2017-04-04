@@ -1,0 +1,25 @@
+<div class="filter-wrap">
+    <div class="col-xs-1 sequence-wrap">
+    <div class="sequence" data-ng-click="columnVO.moveUp()"><i class="fa fa-caret-up fa-2x"></i></div>
+    <div class="sequence" data-ng-click="columnVO.moveDown()"><i class="fa fa-caret-down fa-2x"></i></div>
+</div>
+    <div class="col-xs-5">
+        <div class="box-title">Display Columns</div>
+        <select id="displayColumns" class="form-control" title="" multiple="multiple" size="8" data-ng-model="columnVO.selected">
+            <option data-ng-repeat="column in columnVO.data.showColumns" value="{{column.field}}">{{column.title}}</option>
+        </select>
+    </div>
+    <div class="col-xs-1 direction-wrap">
+        <div class="direction" data-ng-click="columnVO.moveShowBox()"><i class="fa fa-angle-left fa-3x"></i></div>
+        <div class="direction" data-ng-click="columnVO.moveHideBox()"><i class="fa fa-angle-right fa-3x"></i></div>
+    </div>
+    <div class="col-xs-5">
+        <div class="box-title">Hide Columns</div>
+        <select id="hideColumns" class="form-control" title="" multiple="multiple" size="8" data-ng-model="columnVO.selected">
+            <option data-ng-repeat="column in columnVO.data.hideColumns" value="{{column.field}}">{{column.title}}</option>
+        </select>
+    </div>
+</div>
+
+
+

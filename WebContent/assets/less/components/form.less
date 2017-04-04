@@ -1,0 +1,89 @@
+@import "../mixins.less";
+
+.form-control {
+	height: 28px;
+}
+
+.frm-input-group {
+	position : relative;
+	display  : table;
+	width: 100%;
+	border-collapse : collapse;
+
+	.frm-input-group-value {
+		display: table-cell;
+		width : 100%;
+		.form-control {
+			vertical-align: bottom;
+			display : inline-block;
+		}
+
+		&.group-form-text {
+			vertical-align: middle;
+			padding-left: 5px;
+		}
+
+		&.frm-auto {
+			width: auto;
+		}
+	}
+
+	.frm-input-group-btn {
+		display: table-cell;
+		vertical-align: top;
+		padding-left: 0;
+
+		button {
+			height : 28px;
+			border : 1px solid #ccc;
+			margin : 0;
+			i {
+				vertical-align: baseline;
+			}
+		}
+	}
+
+	&.frm-input-multi {
+		.frm-input-group-value {
+			.form-control {
+				height: auto;
+			}
+		}
+		.frm-input-group-btn {
+			padding-left: 4px;
+		}
+	}
+
+	.frm-input-group-value + .frm-input-group-value {
+		padding-left: 2px;
+	}
+}
+
+.frm-inline {
+	.frm-group {
+		display : inline-block;
+	}
+
+	.form-control {
+		display : inline-block;
+		width 	: auto;
+		vertical-align: middle;
+	}
+}
+
+.frm-crud-group {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.checkbox-inline input[type=checkbox], .checkbox-inline input[type=radio] { margin-top: 3px; }
+
+.check-group, .radio-group { display: table-cell; }
+.check-group > div, .radio-group > div {
+	margin-top: 2px;
+	&.check-list-first { margin-top: 0; }
+}
+.check-group label span, .radio-group label span { font-size: 11px; }
+.check-group input[type="checkbox"], .radio-group input[type="radio"] {margin: 0; padding: 0; width: 20px; height: 20px; display: inline-block; vertical-align: middle;}
+.check-group input[type="checkbox"]+label, .radio-group input[type="radio"]+label {margin-left: 4px; height: 20px; vertical-align: -1px;}
+.check-group label+input[type="checkbox"], .radio-group label+input[type="radio"] {margin-left: 12px;}

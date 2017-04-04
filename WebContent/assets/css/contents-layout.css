@@ -1,0 +1,524 @@
+/**************************************************************************
+공통 Element
+**************************************************************************/
+.ae-form-control {
+    background-color : rgb(255,255,255);
+    vertical-align   : top;
+    padding         : .4em .75em;
+    border-radius : .25em;
+    border           : 1px solid #ccc;
+    box-shadow  : inset 0 1px 1px rgba(0,0,0,.075);
+    transition   : border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    font-size    : 11px;
+    width        : auto;
+    height       : 24px;
+}
+
+.ae-form-control:focus {
+    border-color: #66afe9;
+    outline     : 0;
+    box-shadow  : none;
+}
+
+/**************************************************************************
+공통 Element - common button
+@example
+<button type="button" class="eden-btn" title="">Button</button>
+**************************************************************************/
+.ae-btn {
+    font-size  : 11px;
+    display    : inline-block;
+    text-align : center;
+    padding    : .4em .75em;
+    border           : 1px solid #ccc;
+    border-radius    : .25em;
+    box-sizing       : content-box;
+    -moz-box-sizing  : content-box;
+    vertical-align   : middle;
+    font-family      : inherit;
+    text-decoration  : none;
+    white-space      : nowrap;
+    cursor           : pointer;
+    outline          : none;
+    background-color : #fff;
+}
+
+.ae-input-btn {
+    border     : 0;
+    outline    : none;
+    background-color: transparent;
+}
+
+.ae-add-btn {}
+.ae-delete-btn {}
+
+.ae-add-btn i {
+    color : rgb(70,65,217);
+}
+
+.ae-delete-btn i {
+    color: rgb(237,0,0);
+}
+
+.ae-save-btn i {
+    color : rgb(255, 84, 0);
+}
+
+.ae-download-btn i {
+	color : rgb(29,219,22);
+}
+
+.ae-add-btn:hover,
+.ae-delete-btn:hover,
+.ae-save-btn:hover,
+.ae-download-btn:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+
+/**************************************************************************
+  공통 Element
+  input text clear
+**************************************************************************/
+.ae-input-text-clear {
+    position : relative;
+    display  : inline-block;
+}
+.ae-input-text-clear-icon {
+    position     : absolute;
+    top          : 4px;
+    right        : 5px;
+    border-width : 0;
+    outline      : none;
+    background-color : rgb(255,255,255);
+}
+.ae-input-text-clear-icon:focus,
+.ae-input-text-clear-icon:hover {
+    text-shadow : 2px 2px 1px rgba(51,51,51,.2);
+}
+
+/**************************************************************************
+  공통 Element
+  input text clear + 조회button
+**************************************************************************/
+.group-search-btn {
+    display : inline-block;
+    margin-bottom : 4px;
+}
+.group-input-box {
+    position : relative;
+    display  : block;
+    float    : left;
+}
+.group-input {
+    border-top-right-radius   : 0;
+    border-bottom-right-radius: 0;
+}
+.group-btn {
+    display    : block;
+    float      : left;
+    height     : 24px;
+    text-align : center;
+    background-color : #fff;
+    border           : 1px solid #ccc;
+    border-left-width: 0;
+    box-sizing       : border-box;
+    border-top-right-radius   : .25em;
+    border-bottom-right-radius: .25em;
+}
+
+.group-inquiry-btn i {
+    color : rgb(70,65,217);
+}
+
+.group-search-btn:after {
+    display: table;
+    content: " ";
+    clear  : both;
+}
+
+/**************************************************************************
+Contents영역 - header
+@example
+<div id="app-content-header">
+    <div class="content-header-title">
+        <h2 class="content-title">TITLE</h2>
+    </div>
+    <div class="content-header-location">
+        <ol class="breadcrumb">
+            <li><a href="#">LOCATION1</a></li>
+            <li><a href="#">LOCATION2</a></li>
+        </ol>
+    </div>
+</div>
+**************************************************************************/
+#app-content-header {
+    padding     	: 0;
+    line-height : 40px;
+    background  : #525252;
+    background  : #5a8db6 url(../img/common/devoops_pattern_b10.png) 0 0 repeat;
+}
+#app-content-header:after {
+    display : table;
+    content : " ";
+    clear   : both;
+}
+#app-content-header .content-header-title {
+
+}
+#app-content-header .content-header-title .content-title {
+    font-size : 24px;
+    padding   : .25em;
+    color     : #fff;
+}
+#app-content-header .content-header-location {
+    text-align : right;
+}
+#app-content-header .content-header-location .breadcrumb {
+    padding       : 0 15px;
+    background    : none;
+    margin        : 0;
+    border-radius : 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius   : 0;
+}
+#app-content-header .content-header-location .breadcrumb > li > a {
+    color:#d8d8d8;
+}
+#app-content-header .content-header-location .breadcrumb > li > a:hover,
+#app-content-header .content-header-location ol > li:last-child > a {
+    color:#f8f8f8;
+}
+
+
+
+/**************************************************************************
+Contents영역 - 전체검색
+@example
+<div class="row">
+    <div class="search-tot-box">
+        <div class="search">
+        </div>
+        <div class="toggle-btn">
+            <i class="fa fa-caret-up fa-lg"></i>
+        </div>
+    </div>
+</div>
+**************************************************************************/
+.app-content-search {
+    position : relative;
+    background-color : #f9f9f9;
+    padding-top : 8px;
+    padding-bottom : 8px;
+}
+.app-content-search:after {
+    display : table;
+    content : " ";
+    clear   : both;
+}
+
+
+
+.search-tot-box {
+    position   : relative;
+    padding    : 0;
+    margin     : 0 0 1px;
+    border-top : 1px solid #00498f;
+    background-color: #FCFCFC;
+}
+/* 검색영역 */
+.search-tot-box .search {
+
+}
+/* 검색 show/hide button영역*/
+.search-tot-box .toggle-btn {
+    display    : block;
+    width      : 100%;
+    bottom     : 0;
+    text-align : center;
+    border-width : 0;
+    border-top   : 1px solid #eaeaea;
+    background-color: #e1e1e1;
+}
+/* 검색 button */
+.search-tot-box .btn { margin : 0; }
+
+.search-tot-box:after,
+.search-tot-box .search:after {
+    display : table;
+    content : " ";
+    clear   : both;
+}
+
+
+/**************************************************************************
+Contents Box 영역 - layout
+@example
+<div class="row">
+    <div class="content-area-container col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-name">
+                    <i class="fa fa-cogs"></i>
+                    <span>메뉴정보</span>
+                </div>
+                <div class="box-icons">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="box-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+**************************************************************************/
+.content-area-container {
+    position : relative;
+	padding : 0;
+    margin  : 0;
+}
+
+.content-area-pinned-container {
+    float : left;
+}
+.content-area-verticality-container {
+
+}
+
+.content-area-container .box {
+	margin-bottom: 5px;
+}
+
+.row .content-area-container+.content-area-container { padding-left: 5px; }
+
+.box-content {
+    position      : relative;
+    padding       : 15px;
+    background    : #FCFCFC;
+    border-radius : 0 0 3px 3px;
+    -webkit-border-radius : 0 0 3px 3px;
+    -moz-border-radius    : 0 0 3px 3px;
+}
+
+.box-content-tab,
+.box-content-search { margin-bottom : 10px; }
+
+.box-content-total {
+	margin-top	  : 20px;
+	margin-bottom : 20px;
+}
+
+.box-content-article {
+
+}
+.box-content-article .article-header {
+    position : relative;
+    padding  : 5px;
+    border   : 1px solid #dee5e7;
+    border-bottom-width : 0;
+    background-color    : rgba(199,211,237,.3);
+}
+.box-content-article .article-header .article-header-box {
+    padding : 0;
+    margin  : 0;
+}
+.article-header .article-header-box .info {
+	padding		: .4em .75em;
+	font-weight : bold;
+}
+.article-header .article-header-box .info .total-count {
+	color: blue;
+}
+
+.box-content-article .article-view {
+    position : relative;
+}
+
+.content-area-container:after,
+.box-content-article .article-header:after {
+    display : table;
+    content : " ";
+    clear   : both;
+}
+
+/**************************************************************************
+Contents Box 영역 - header
+**************************************************************************/
+.content-aria-box-header {
+    margin-bottom : 5px;
+}
+.box-header-left-layer {
+    float : left;
+    width : 35%;
+    text-align : left;
+}
+.box-header-right-layer {
+    float : left;
+    width : 65%;
+    text-align : right;
+}
+
+.content-aria-box-header:after {
+    display : table;
+    content : " ";
+    clear   : both;
+}
+/**************************************************************************
+Contents Box 영역 - grid
+**************************************************************************/
+.ui-grid {
+	border-color: #dee5e7;
+}
+.ui-grid-top-panel {
+	background : #f6f8f8;
+}
+.ui-grid-row-header-cell {
+	background-color : inherit !important;
+}
+.ui-grid-cell-focus {
+    padding: 3px;
+    background-color: inherit;
+}
+
+
+/**************************************************************************
+Contents Box 영역 - tree
+**************************************************************************/
+.ae-tree {
+    border : 1px solid #dee5e7;
+}
+
+.ae-tree-view {
+
+}
+
+.ae-tree-list {
+
+}
+
+.ae-tree-node {
+
+}
+
+.ae-tree-node:hover {
+    cursor : pointer;
+}
+.ae-tree-node.selected {
+    background-color : rgb(150,188,255);
+}
+
+.ae-tree-node:before {
+    display : table;
+    content : " ";
+}
+
+.ae-tree-node .ae-tree-title {
+    margin : 0;
+    font-size : 12px;
+    padding : 5px;
+}
+
+.ae-tree-node .ae-tree-title a {
+    display : block;
+    color   : #525252;
+}
+.ae-tree-node .ae-tree-title a:hover,
+.ae-tree-node .ae-tree-title a:active,
+.ae-tree-node .ae-tree-title a:visited,
+.ae-tree-node .ae-tree-title a:link {
+    text-decoration : none;
+}
+.ae-tree-node.selected > .ae-tree-title a {
+    color : #fff;
+}
+
+.ae-tree-node .ae-tree-title a i {
+    width : 14px;
+}
+
+.no-icon {
+    width  : 14px;
+    height : 12px;
+    display: inline-block;
+    content: "\f095";
+}
+
+
+
+
+
+.ae-tbl {
+    border : 1px solid #dee5e7;
+}
+.ae-tbl-container {
+    position : absolute;
+}
+
+.ae-tbl-header-panel {
+    position : relative;
+    oveflow  : hidden;
+}
+.ae-tbl-header-row {
+    position : relative;
+}
+.ae-tbl-header-col {
+    position : absolute;
+}
+.ae-tbl-header-col-content {
+    padding : 5px;
+}
+
+.ae-tbl-view-panel {
+    position : relative;
+    overflow : hidden;
+}
+.ae-tbl-view-row {
+    position : relative;
+}
+.ae-tbl-view-col {
+    position : absolute;
+}
+.ae-tbl-view-col-content {
+    padding : 5px;
+}
+
+
+.ae-tbl:after,
+.ae-tbl-header-panel:after,
+.ae-tbl-header-row:after,
+.ae-tbl-view-panel:after,
+.ae-tbl-view-row:after {
+    display : table;
+    content : " ";
+    clear   : both;
+}
+
+/*
+.form-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height : 24px;
+    line-height : 24px;
+}
+.form-group:after {
+    display : table;
+    content : " ";
+    clear   : both;
+}
+
+.form-group .form-title {
+    margin-bottom: 0;
+    height : inherit;
+}
+
+.form-group .form-content {
+    height : inherit;
+}
+
+
+*/

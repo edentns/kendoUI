@@ -1,0 +1,61 @@
+@import "../variables.less";
+@import "../mixins/mixins.button.less";
+
+.btn-edit {
+    .btn-variant(@btn-edit-color, @btn-edit-bg, @btn-edit-border);
+}
+.btn-download {
+    .btn-variant(@btn-download-color, @btn-download-bg, @btn-download-border);
+}
+.btn-setting {
+    .btn-variant(@btn-setting-color, @btn-setting-bg, @btn-setting-border);
+}
+
+.btn-group {
+    button {
+        &.active {
+            color : #fff;
+            background-color: @color-green;
+            border-color : darken(@color-green, 5%);
+
+            &:hover,
+            &:active,
+            &:focus {
+                color : #fff;
+                background-color: @color-green;
+                border-color : darken(@color-green, 5%);
+            }
+        }
+    }
+}
+
+
+/* inline-search-btn */
+.home-search-btn {
+    margin: 0;
+}
+.home-search-btn {
+    .btn {
+        margin-bottom: 0;
+    }
+}
+.home-search-btn > .search-btn {
+    display: inline-block;
+}
+.search-btn {
+    position: relative;
+}
+.search-btn > input {
+    width: 240px;
+    padding-right: 72px;
+}
+.search-btn > button {
+    position:absolute;
+    margin: 0;
+    height: 26px;
+    top:1px;
+    right:1px;
+    display: block;
+    width: 70px;
+    border-width: 0;
+}
