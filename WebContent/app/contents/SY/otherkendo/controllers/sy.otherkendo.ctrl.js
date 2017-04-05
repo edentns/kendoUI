@@ -37,7 +37,7 @@
                             "</ul>" +
                         "</div>",
 
-                controller: function ($scope) {
+                controller:['$scope', function ($scope) {
                     $scope.openDropdown = function () {
                         $scope.open = !$scope.open;
                     };
@@ -78,7 +78,7 @@
                         });
                         return (varClassName);
                     };
-                }
+                }]
             }
     		
     	})
@@ -91,6 +91,9 @@
         	var menuId = MenuSvc.getMenuId($state.current.name);
         	
         	
+        	$scope.selectAddress = function() {
+        		postcodify();
+			};
         	
         	//라디오버튼 동적생성
         	$scope.radio = [

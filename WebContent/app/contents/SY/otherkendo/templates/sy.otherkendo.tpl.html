@@ -9,6 +9,25 @@
         </div>
     </div>
     
+    <!-- 주소 -->
+        <div class="row">
+        <div class="content-area-container col-xs-12">
+	        <div data-content-box-layer>
+	        	<div class="demo-section k-content wide">
+	            	<div class="row">
+	            		<button id="postcodify_search_button">검색</button><br />
+	            		<input type="text" name="" class="postcodify_postcode5" value="" />
+	            		<input type="text" name="" class="postcodify_address" value="" /><br />
+						<input type="text" name="" class="postcodify_details" value="" /><br />
+						<input type="text" name="" class="postcodify_extra_info" value="" /><br />
+       				</div>
+	            </div>
+	        </div>
+        </div>
+    </div>
+    
+    
+    
     <!-- 라디오 동적생성 -->
     <div class="row">
         <div class="content-area-container col-xs-12">
@@ -236,6 +255,7 @@
         </div>
     </div>
 </div>
+<script> $(function() { $("#postcodify_search_button").postcodifyPopUp(); }); </script>
 
 <style type="text/css">
     .employee-name {

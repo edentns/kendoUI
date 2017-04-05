@@ -36,6 +36,14 @@
 	<link rel="stylesheet" href="assets/css/contents-layout.css" >
 	<link rel="stylesheet" href="assets/css/main.css" >
 	<!-- endbuild -->
+	<script src="/slm_web_bow/bower_components/jquery/dist/jquery.js"></script>
+	<script src="/slm_web_bow/bower_components/jquery-ui/jquery-ui.js"></script>
+	<!-- endbuild -->
+	<script src="search.js"></script>
+	
+<script>$(document).ready(
+		function () {  $("#postcodify_search_button").postcodifyPopUp(); }
+		) </script>
 </head>
 <body data-ng-cloak>
 	<!-- loader -->
@@ -50,10 +58,7 @@
 	<ui-view></ui-view>
 
 	<!-- build:js(.) assets/lib/vendor0.js -->
-	<script src="/slm_web_bow/bower_components/jquery/dist/jquery.js"></script>
-	<script src="/slm_web_bow/bower_components/jquery-ui/jquery-ui.js"></script>
-	<!-- endbuild -->
-
+	
 	<!-- build:js(.) assets/lib/vendor1.js -->
 	<script src="/slm_web_bow/bower_components/angular/angular.js"></script>
 	<script src="/slm_web_bow/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -346,6 +351,7 @@
 	<script src="app/shared/modal/emp/modal.searchEmp.ctrl.js"></script>
 	<script src="app/shared/modal/commonDetail/modal.detail.ctrl.js"></script>
 	<!-- endbuild -->
+
 	<script src="https://bs-static.cdn.telerik.com/1.2.6/everlive.all.min.js"></script>
 	<script type="text/javascript">
 	var everlive = new Everlive({
@@ -354,4 +360,5 @@
 	  });
 	</script>
 </body>
+
 </html>
