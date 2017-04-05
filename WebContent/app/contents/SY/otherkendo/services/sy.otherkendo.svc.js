@@ -6,9 +6,28 @@
      * @name SY.depart.service : SY.departSvc
      * 부서관리
      */
+    
     angular.module("SY.otherkendo.service")
-        .factory("SY.otherkendoSvc", ["APP_CONFIG", "$http", function (APP_CONFIG, $http) {
-            return {
+        .factory("SY.otherkendoSvc", SyOtherkendoSvc)
+            
+        SyOtherkendoSvc.$inject = [ 'ModalSvc', 'APP_CODE', '$http'];
+    
+        	function SyOtherkendoSvc(ModalSvc, APP_CONFIG, $http) {
+				
+			
+        	
+        	return {
+            	
+            	
+            	/**
+            	 * 함기현 - 주소검색창 새로 구현중
+            	 */
+            	modalCustCmp: function () {
+    				var modalInstance = ModalSvc.openHSearchCustCmp();
+    				return modalInstance.result;
+    			},
+    			
+            	
 	            /**
 	             * 컨설턴트를 포함하는 상위부서를 가져온다.
 	             * @param {{wk_grp:Number}} param
@@ -77,5 +96,5 @@
                     });
                 }
             };
-        }]);
+        };
 }());

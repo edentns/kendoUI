@@ -9,6 +9,23 @@
 		.service("ModalSvc", ["$modal",
 			function ($modal) {
 				var self = this;
+				
+				/**
+            	 * 함기현 - 주소검색창 새로 구현중
+            	 */
+				self.openHSearchCustCmp = function (options) {
+					var self = this,
+						defaults = {
+							templateUrl: "app/shared/modal/searchAddress/modal.searchAddress.tpl.html",
+							//controller : "modal.searchAddressCtrl",
+							size       : "lg"
+						};
+
+					if (options) { defaults = angular.extend(defaults, options); }
+
+					return $modal.open(defaults);
+				};
+				
 
 				/**
 				 * 고객사 검색 모달팝업을 연다.

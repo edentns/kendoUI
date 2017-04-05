@@ -91,8 +91,10 @@
         	var menuId = MenuSvc.getMenuId($state.current.name);
         	
         	
-        	$scope.selectAddress = function() {
-        		postcodify();
+        	$scope.addrSearch = function() {
+        		SyOtherkendoSvc.modalCustCmp().then(function (res) {
+					
+				});
 			};
         	
         	//라디오버튼 동적생성
