@@ -83,19 +83,31 @@
     		
     	})
     
-        .controller("SY.otherkendoCtrl", ["$scope", "$q", "SY.codeSvc", "SY.otherkendoSvc", "APP_CODE", "resData", "Page", "$state", 'MenuSvc', '$location',"$window",'UtilSvc',
-            function ($scope, $q, SyCodeSvc, SyOtherkendoSvc, APP_CODE, resData, Page, $state, MenuSvc, $location, window,UtilSvc) {
+        .controller("SY.otherkendoCtrl", ["$scope", "$q", "SY.codeSvc", "SY.otherkendoSvc", "APP_CODE", "resData", "Page", "$state", 'MenuSvc', "$location","$window","UtilSvc",
+            function ($scope, $q, SyCodeSvc, SyOtherkendoSvc, APP_CODE, resData, Page, $state, MenuSvc, $location, window, UtilSvc) {
         	var page  = $scope.page = new Page({ auth: resData.access }),
             today = edt.getToday();
 
         	var menuId = MenuSvc.getMenuId($state.current.name);
         	
         	
+        	
+        	//파일업로드       	
+        	$scope.onComplete = function(e) {
+    			UtilSvc.excelToGrid().then(function (resData) {
+        			ex.hahm.grid.data   = resData.data.results[0];
+                });
+            };
+        	
+        	
+            
+        	//주소창 보여주기
         	$scope.addrSearch = function() {
         		SyOtherkendoSvc.modalCustCmp().then(function (res) {
-					
 				});
 			};
+				
+			
         	
         	//라디오버튼 동적생성
         	$scope.radio = [
@@ -119,6 +131,27 @@
         
         	$scope.selectedUserIds = [];
         	//라디오버튼 동적생성
+        	
+        	
+        	//엑셀파일 불러서 그리드에 보여준다
+        	var ex = {};
+        		
+        		ex.hahm = {
+    				boxTitle: '엑셀그리드',
+					grid: {
+						data: [],
+						columnDefs: [   { visible: true, displayName: '회사코드', field: 'CO_CD' },
+				          				{ visible: true, displayName: '거래처코드', field: 'TR_CD', cellClass: 'ta-c' },
+										{ visible: true, displayName: '거래처구분', field: 'TR_FG', cellClass: 'ta-c' }]
+					},
+        			upload: function(e) {
+		        		UtilSvc.excelToGrid().then(function (resData) {
+		        			ex.hahm.grid.data   = resData.data.results[0];
+		                });
+					}	
+        				
+        		};
+        	$scope.ex = ex;
         	
         	
         	//멀티 셀렉트 안에 들어갈 데이터값 가져와서 선택후 검색누르면 그리드에 그려주는 기능, 셀 merge, 글번호, 셀 정렬

@@ -32,12 +32,34 @@
         	<div data-content-box-layer>
 	        	<div class="demo-section k-content wide">
 	            	<div class="row">
-	            		<button id="postcodify_search_button" data-ng-click="addrSearch()">검색</button><br />
+	            		<button id="postcodify_search_button" data-ng-click="addrSearch()">검색</button><br /><br />
+	            		<button data-ng-click="ex.hahm.upload()">엑셀업로드</button><br />
+	            		<input name="files" id="files"
+		                   type="file"
+		                   kendo-upload
+		                   k-async="{ saveUrl: 'http://localhost:8080/SalesLifecycleMgmt/excelUpload',  autoUpload: true }"
+		                   k-complete="onComplete"
+		                   k-multiple="false"
+		                   k-validation="{allowedExtensions:['.xls']}"
+		                   k-localization="{ invalidFileExtension: '엑셀파일이 아닙니다.'}"
+		                   />
        				</div>
 	            </div>
 	    	</div>
         </div>
     </div>
+	<div class="row">
+		<div class="content-area-container col-xs-12">
+			<div data-content-box-layer data-box-title="ex.hahm.boxTitle">
+				<div class="box-content-article">
+					<div data-ui-grid="ex.hahm.grid" class="article-view grid" style="height: 400px;"
+					     data-ui-grid-auto-resize
+					     data-ui-grid-resize-columns>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
     
     
     
