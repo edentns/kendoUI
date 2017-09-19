@@ -83,13 +83,24 @@
     		
     	})
     
-        .controller("SY.otherkendoCtrl", ["$scope", "$q", "SY.codeSvc", "SY.otherkendoSvc", "APP_CODE", "resData", "Page", "$state", 'MenuSvc', "$location","$window","UtilSvc",
-            function ($scope, $q, SyCodeSvc, SyOtherkendoSvc, APP_CODE, resData, Page, $state, MenuSvc, $location, window, UtilSvc) {
+        .controller("SY.otherkendoCtrl", ["$scope","$window", "$q", "SY.codeSvc", "SY.otherkendoSvc", "APP_CODE", "resData", "Page", "$state", 'MenuSvc', "$location","$window","UtilSvc",
+            function ($scope, $window, $q, SyCodeSvc, SyOtherkendoSvc, APP_CODE, resData, Page, $state, MenuSvc, $location, window, UtilSvc) {
         	var page  = $scope.page = new Page({ auth: resData.access }),
             today = edt.getToday();
 
         	var menuId = MenuSvc.getMenuId($state.current.name);
         	
+        	$scope.juso = "123123";
+        	
+        	$window.jusoCallBack = function(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn , detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn, buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo) {
+        		$scope.$apply(function() {
+        			$scope.juso=roadFullAddr;
+        		});
+            };
+        	
+        	$scope.goPopup = function() {
+                $window.open("/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes");
+            };
         	
         	
         	//파일업로드       	
@@ -189,7 +200,10 @@
 		        			else p+=","+"\""+$scope.selectedUserIds[i]+"\"";
 		        		}
 		        		var param = {
-		                        procedureParam:"USP_SY_CODETEST_GET&"+p+""
+		                        procedureParam:"USP_SY_CODETEST_GET&aaa@s|bbb@s",
+		                        aaa:p,
+		                        bbb:dld,
+		                        
 		                    };
 		        		
 		        		UtilSvc.getHList_code(param).then(function (resData) {

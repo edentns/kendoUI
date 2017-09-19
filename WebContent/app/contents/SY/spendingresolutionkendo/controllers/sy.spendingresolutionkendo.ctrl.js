@@ -104,7 +104,6 @@
             					});
                 			},
 	                		create: function(e) {
-	                			alert(" ");
 	                			var defer = $q.defer();
 	                			var param = {
                                 	procedureParam:"BX.GW_SPENDING_RESOLUTIONS_01I&USE_EMP_NM@s|CTD_CD@s|CTD_NM@s|PRI_CUST_CD@s|PUB_CUST_CD@s|PUB_CUST_NM@s",
@@ -164,10 +163,6 @@
                 	}),
                 	navigatable: true,
                 	toolbar: 
-                		//[{template: '<a class="k-button" onclick="create" style = "float:right;">생성</a>'+
-                		//'<a class="k-button" onclick="save" style = "float:right;">저장</a>'+
-                		//'<a class="k-button" onclick="cancel" style = "float:right;">취소</a>'}],
-                		
                 		["create", "save", "cancel"],
                 	columns: [
            		           {field: "ROW_NUM", title: "순서", width: 100},

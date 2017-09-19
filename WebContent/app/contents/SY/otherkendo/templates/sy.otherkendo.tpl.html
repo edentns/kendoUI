@@ -9,11 +9,23 @@
         </div>
     </div>
     
-<script>$(function() { $("#postcodify_search_button").postcodifyPopUp(); });</script>
     
+<script>$(function() { $("#postcodify_search_button").postcodifyPopUp(); });</script>
+    <div class = "row">
+    <form name= "form" id= "form" method= "post" > 
+     <input type= "button" ng-click="goPopup();" value= " 팝업 " /> 도로명주소 전체(포맷)
+     <input type= "text"  ng-model="juso"/><br> 도로명주소
+     <span ng-bind="juso"></span>
+     <input type= "text" id= "roadAddrPart1"  name= "roadAddrPart1" /><br> 고객입력 상세주소
+     <input type= "text"  id= " addrDetail "  name= " addrDetail " /><br> 참고주소
+     <input type= "text"  id= "roadAddrPart2"   name= "roadAddrPart2" /><br> 우편번호
+     <input type= "text"  id= " zipNo "  name= " zipNo " /> 
+     </form> 
+    </div>
     <!-- 주소 -->
     <div class="row">
         <div class="content-area-container col-xs-12">
+        <ng-address ng-address-result="data" ng-address-callback="callback(data)">주소검색</ng-address> 
 	        	<div class="demo-section k-content wide">
 	            	<div class="row">
 	            		<button id="postcodify_search_button">검색</button><br />

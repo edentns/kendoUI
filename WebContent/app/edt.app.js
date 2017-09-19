@@ -64,5 +64,7 @@
 
 // [SV]
     angular.module('edtApp.SV', []);
+    
+    angular.module('edtApp.ma', []);
 
 }());

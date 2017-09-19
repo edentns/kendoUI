@@ -14,6 +14,13 @@
 		            today = edt.getToday();
 
                 var menuId = MenuSvc.getMenuId($state.current.name);
+                
+                $scope.onDataBound = function(e) {
+                	var self = this;
+                	var a = $("#departTreeList").data("kendoTreeList");
+                	var b = a.dataItem();
+                	alert(a);
+				};
 
                 /**
                  * 부서관리
@@ -196,6 +203,11 @@
                         }
                     },
                     columns: [
+						{ 
+						    field: 'MGR_CD',
+						    title: 'MGR_CD',
+						    expandable: true
+						},
                         { 
                             field: 'NAME',
                             title: '부서명',
